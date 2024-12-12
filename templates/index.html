@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Solar Power Prediction</title>
+</head>
+<body>
+    <h1>Solar Power Prediction</h1>
+    <form action="/predict" method="POST">
+        <input type="text" name="distance_to_solar_noon" placeholder="Distance to Solar Noon" required>
+        <input type="text" name="temperature" placeholder="Temperature" required>
+        <input type="text" name="wind_direction" placeholder="Wind Direction" required>
+        <input type="text" name="wind_speed" placeholder="Wind Speed" required>
+        <input type="text" name="sky_cover" placeholder="Sky Cover" required>
+        <input type="text" name="visibility" placeholder="Visibility" required>
+        <input type="text" name="humidity" placeholder="Humidity" required>
+        <input type="text" name="average_wind_speed" placeholder="Average Wind Speed (Period)" required>
+        <input type="text" name="average_pressure" placeholder="Average Pressure (Period)" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+
+    {% if error_text %}
+    <div class="result error">{{ error_text }}</div>
+    {% endif %}
+</body>
+</html>
