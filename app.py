@@ -4,7 +4,7 @@ import joblib  # Assuming the model is saved using joblib
 app = Flask(__name__)
 
 # Load the pre-trained model
-model = joblib.load(r'C:\Users\dell\Downloads\project_solar_panel_generation\xgb_model.pkl')  # Adjust file name/path as necessary
+model = joblib.load(r'project_solar_panel_generation\xgb_model.pkl')  # Adjust file name/path as necessary
 
 @app.route('/')
 def index():
